@@ -24,7 +24,7 @@ namespace WordUnscrambler
                 switch(option.ToUpper())
                 {
                     case "F":
-                        Console.WriteLine("Please input a file path: ");
+                        Console.WriteLine("Please, input a file path: ");
                         ExecuteScramblingInFile();
                         break;
                     case "M":
