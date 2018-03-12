@@ -1,6 +1,12 @@
-rome
+﻿rome
 whole
 world
 easy
 cat
 scramble
+человек
+птица
+пеликан
+чашка
+репозиторий
+мир

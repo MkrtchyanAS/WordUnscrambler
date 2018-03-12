@@ -16,7 +16,7 @@ namespace WordUnscrambler.Workers
                 string scrambledWordLower = scrambledWord.ToLower();
                 foreach (var word in wordList)
                 {
-                    if(scrambledWord.Equals(word, StringComparison.OrdinalIgnoreCase))
+                    if(scrambledWord.Equals(word, StringComparison.CurrentCultureIgnoreCase))
                     {
                         matchedWords.Add(BuildMatchedWord(scrambledWordLower, word));
                     }
@@ -31,7 +31,7 @@ namespace WordUnscrambler.Workers
                         var sortedScrambledWord = new string(scrambledWordsArray);
                         var sortedWord = new string(wordsArray);
 
-                        if (sortedScrambledWord.Equals(sortedWord, StringComparison.OrdinalIgnoreCase))
+                        if (sortedScrambledWord.Equals(sortedWord, StringComparison.CurrentCultureIgnoreCase))
                         {
                             matchedWords.Add(BuildMatchedWord(scrambledWordLower, word));
                         }
