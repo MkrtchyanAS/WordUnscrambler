@@ -11,8 +11,6 @@ namespace WordUnscrambler.Workers
             try
             {
                 fileContent = File.ReadAllLines(filePath);
-
-                
             }
             catch (Exception ex)
             {

@@ -18,12 +18,11 @@ namespace WordUnscrambler.Workers
                 {
                     if(scrambledWord.Equals(word, StringComparison.OrdinalIgnoreCase))
                     {
-                        matchedWords.Add(BuildMatchedWord(scrambledWord, word));
-                        Console.WriteLine("For debug only ***scrambledWord.Equals***: {0}, {1}", word, scrambledWord);
+                        matchedWords.Add(BuildMatchedWord(scrambledWordLower, word));
                     }
                     else
                     {
-                        var scrambledWordsArray = scrambledWord.ToCharArray();
+                        var scrambledWordsArray = scrambledWordLower.ToCharArray();
                         var wordsArray = word.ToCharArray();
 
                         Array.Sort(scrambledWordsArray);
@@ -31,14 +30,12 @@ namespace WordUnscrambler.Workers
 
                         var sortedScrambledWord = new string(scrambledWordsArray);
                         var sortedWord = new string(wordsArray);
-                        Console.WriteLine("For debug only ***sortedWords***: {0}, {1}", sortedWord, sortedScrambledWord);
 
                         if (sortedScrambledWord.Equals(sortedWord, StringComparison.OrdinalIgnoreCase))
                         {
-                            matchedWords.Add(BuildMatchedWord(scrambledWord, word));
+                            matchedWords.Add(BuildMatchedWord(scrambledWordLower, word));
                         }
                     }
-                    Console.WriteLine("For debug only ***scrambledWords***: {0}", scrambledWord);
                 }
             }
 
@@ -52,7 +49,6 @@ namespace WordUnscrambler.Workers
                 ScrambledWord = scrambledWord,
                 Word = word
             };
-            Console.WriteLine("For debug only ***BuildMatchedWord***: {0}, {1}", word, scrambledWord);
             return matchedWord;
 
         }
