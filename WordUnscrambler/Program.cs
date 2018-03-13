@@ -37,7 +37,7 @@ namespace WordUnscrambler
                             break;
                     }
 
-                    var continueDecision = string.Empty;
+                    string continueDecision;
 
                     do
                     {
